@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 # Model & Client Initialization
 # ----------------------------
 model = SentenceTransformer('BAAI/bge-m3', device='cuda' if torch.cuda.is_available() else 'cpu')
-client = qdrant_client.QdrantClient("IP Address:6333")
+client = qdrant_client.QdrantClient("http://35.188.22.78:6333")
 llama = Ollama(model="llama3.1:8b", temperature=0.0, mirostat_tau=4.0, mirostat_eta=0.65)
 
 # ----------------------------
